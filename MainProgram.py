@@ -11,10 +11,11 @@ class MainScreen:
             [sg.Input(key='senha')],
             [sg.Button('Cadastrar'), sg.Button('Logar')]
         ]
+
+        texts = open('Nome_Usuario.txt', 'a')
     
         window = sg.Window('Login').layout(root)
         self.events, self.values = window.read()
-
 
         if self.events == 'Cadastrar':
             

@@ -1,6 +1,5 @@
-Tela de Cadastro e Login.
+### Tela de Cadastro e Login.
 
-projeto em andamento...
+💬 OBS: Resolvido o problema de erro ao ler o arquivo: 'Nome_Usuario.txt'
 
-obs:
-    crie uma função para criar o arquivo primeiro, o projeto da erro se nao criar antes.
+🚀 Projeto ainda em andamento...

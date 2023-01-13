@@ -17,32 +17,30 @@ class MainScreen:
 
 
         if self.events == 'Cadastrar':
-            usuario = self.values['usuario']
-            usu = True
+            
+            with open('Nome_Usuario.txt', 'r') as Nomes:
+                LerNames = Nomes.readlines()
             
             if self.values['usuario'] != '':
+                usuario = self.values['usuario']
+                usu = True
+                LerNames = list(map(lambda x: x.replace('\n', ''), LerNames))
+                
+                for i in range(len(LerNames)):
+                    if usuario == LerNames[i]:
+                        usu = False
+                        print('Usuário já existe')
+                
 
+                    
+                
                 if usu == True:
 
-
-                    with open('Nome_Usuario.txt', 'r') as Arc_Nomes:
-                        LerNomes = Arc_Nomes.readlines()
-                        for i in range(len(LerNomes)):
-                            if usuario == LerNomes[i]:
-                                usu = False
-                                print('Usuário já existe')
-                    usuario = self.values['usuario']
-                    LerNomes = list(map(lambda x: x.replace('\n', ''), LerNomes))
-
-                        
-                    
-                    if usu == True:
-
-                        with open('Nome_Usuario.txt', 'a') as nomes:
-                            nomes.write(self.values['usuario'] + '\n')
-                        with open('Senha_Usuario.txt', 'a') as senhas:
-                                senhas.write(self.values['senha'] + '\n')   
-                                print('usuario cadastrado')
+                    with open('Nome_Usuario.txt', 'a') as nomes:
+                        nomes.write(self.values['usuario'] + '\n')
+                    with open('Senha_Usuario.txt', 'a') as senhas:
+                            senhas.write(self.values['senha'] + '\n')   
+                            print('usuario cadastrado')
 
             else:
                 print('campos não preenchidos')
